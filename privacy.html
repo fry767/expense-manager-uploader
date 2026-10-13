@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How Expense Manager APK Uploader uses Google Drive access and protects authorization credentials.">
+  <title>Privacy policy | Expense Manager APK Uploader</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header><a class="brand" href="./">Expense Manager APK Uploader</a><nav aria-label="Main"><a href="privacy.html" aria-current="page">Privacy policy</a></nav></header>
+  <main class="policy">
+    <p class="eyebrow">Last updated October 12, 2026</p>
+    <h1>Privacy policy</h1>
+    <p class="intro">This policy covers Expense Manager APK Uploader, a personal utility that uploads signed Android app builds from GitHub Actions to the owner's Google Drive. It covers the uploader and this informational website.</p>
+    <h2>Google data accessed and used</h2>
+    <p>The uploader requests the <code>https://www.googleapis.com/auth/drive.file</code> scope. It accesses only Drive files and folders created by, or explicitly made available to, this OAuth application. Its configured use is to create the <strong>Expense Manager APKs</strong> folder, upload or replace <strong>expense-manager-latest.apk</strong>, and read the file's metadata and ID to produce a private download link.</p>
+    <p>The uploader does not read unrelated Drive documents, contacts, email, or the expense records stored by the installed Android app. It does not request permission to list or access the entire Drive.</p>
+    <h2>Credentials and storage</h2>
+    <p>Google authorization happens in Google's sign-in interface on the owner's computer. The resulting OAuth client configuration and refresh token are stored in a private local configuration and, with the owner's approval, in a GitHub Actions repository secret. GitHub build jobs write a temporary configuration to authenticate the upload and remove that file when the upload finishes.</p>
+    <p>Android build files are stored as private GitHub Actions artifacts for 30 days and in the owner's Google Drive until removed. Drive may retain earlier revisions according to its own policies. Build summaries and logs may contain the APK's filename and private download link. Authorization credential values are not intentionally printed to logs or included in this website.</p>
+    <h2>Sharing and third-party services</h2>
+    <p>Google provides sign-in and Drive storage; GitHub provides build runners, protected secrets, artifacts, logs, and hosting for this website. Google data is used only to deliver the requested APK to the owner's Drive. The uploader does not change sharing permissions; the owner controls any later sharing through Drive.</p>
+    <p>Google user data is not sold or used for advertising, profiling, or training machine-learning models. This site has no advertising, analytics scripts, or tracking cookies. GitHub Pages may process ordinary hosting information, such as IP addresses, under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub privacy statement</a>. Google services are subject to the <a href="https://policies.google.com/privacy">Google privacy policy</a>.</p>
+    <h2>Retention, revocation, and deletion</h2>
+    <p>The owner can stop automated access by revoking the uploader in <a href="https://myaccount.google.com/connections">Google Account connections</a> and removing the <strong>GOOGLE_DRIVE_RCLONE_CONFIG</strong> GitHub Actions secret and local configuration. Revoking access does not automatically delete previously uploaded APKs. The owner can delete the APK folder and its trash contents in Drive, and remove GitHub artifacts or workflow runs separately.</p>
+    <h2>Contact and changes</h2>
+    <p>For privacy questions, contact <a href="mailto:michaeldeslauriers.md@gmail.com">michaeldeslauriers.md@gmail.com</a>. This page will be updated if the uploader's use of Google data changes.</p>
+    <p><a href="./">Return to the uploader homepage</a></p>
+  </main>
+  <footer><span>Expense Manager APK Uploader</span><a href="./">Home</a></footer>
+</body>
+</html>
